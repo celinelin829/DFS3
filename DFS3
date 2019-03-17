@@ -1,0 +1,47 @@
+<div class = "circle"></div>
+
+<div class = "word">
+  <p> good </p>
+</div>
+
+.circle{
+  background:red;
+  width:100px;
+  height:100px;
+  border-radius: 50%;
+  position:absolute;
+ }
+
+.word{
+  color:red;
+  font-size:20px;
+  position:absolute;
+}
+
+var circle = $(".circle");
+console.log (circle[0].offsetHeight);
+
+$( document ) .on( "mousemove", function( event ) {
+  var screenWidth = $( document ).width();
+  var cursorX = event.pageX;
+  var cursorY = event.pageY;
+  var opacity = (screenWidth - cursorX) / screenWidth;
+  $(".circle").css({
+    "left": cursorX,
+    "top": cursorY,
+  });
+  });
+
+var word = $(".word");
+console.log (word[0].offsetHeight);
+
+$( document ) .on( "mousemove", function( event ) {
+  var screenWidth = $( document ).width();
+  var cursorX = event.pageX;
+  var cursorY = event.pageY;
+  var opacity = (screenWidth - cursorX) / screenWidth;
+  $(".word").css({
+    "right": cursorX,
+    "bottom": cursorY,
+  });  
+  });
